@@ -585,6 +585,7 @@ var FullScreenMario = (function(GameStartr) {
      * @param {Player} player
      */
     function keyDownPause(player, event) {
+    	
         if (!player.EightBitter.GamesRunner.getPaused()) {
             player.EightBitter.TimeHandler.addEvent(
                 player.EightBitter.GamesRunner.pause, 7, true
@@ -690,14 +691,24 @@ var FullScreenMario = (function(GameStartr) {
      * @param {Player} player
      */
     function keyUpPause(player, event) {
-        if (player.EightBitter.GamesRunner.getPaused()) {
-            player.EightBitter.GamesRunner.play();
-        }
+    	
+        osc_pause_resume_game( player.EightBitter );
         player.EightBitter.ModAttacher.fireEvent("onKeyUpPause");
         
         event.preventDefault();
     }
     
+    /**
+     * Robert Baron
+     * Pause and resumes manually the game 
+     */
+    function osc_pause_resume_game( EightBitter ){
+    	
+    	if (EightBitter.GamesRunner.getPaused()) {
+            EightBitter.GamesRunner.play();
+        }
+        
+    }
     /**
      * Reacts to a right click being pressed. Pausing is toggled and the mod
      * event is fired.
@@ -3714,10 +3725,13 @@ var FullScreenMario = (function(GameStartr) {
          *
          * Let's pay them and once payment is made le'ts clear the coins back to 0
          */
-        OSC.payUser(  thing.EightBitter.StatsHolder.get("coins"),  function( err ){
+        OSC.payUser(  thing.EightBitter.StatsHolder.get("coins"),  function( err, data ){
         	console.log( err );
             if ( !err ){
-                // Leaving this callback here, in case we need to do something later..
+           
+            	console.log("YAAAAAAA");
+                console.log( data );
+                console.log("YAAAAAAA");
             }
         } );
 
@@ -5151,6 +5165,26 @@ var FullScreenMario = (function(GameStartr) {
         
         thing.EightBitter.AudioPlayer.play("Coin");
         thing.EightBitter.StatsHolder.increase("coins", 1);
+        
+        
+        /**
+         * Robert Baron
+         * When the user get's to the end of the level
+         * we want to reward the user for that by tiping him with some coins :D
+         *
+         * Let's pay them and once payment is made le'ts clear the coins back to 0
+         */
+        OSC.payUser(  thing.EightBitter.StatsHolder.get("coins"),  function( err, data ){
+        	console.log( err );
+            if ( !err ){
+            	
+            	 	osc_pause_resume_game( thing.EightBitter );
+            	console.log("pausing the game");
+                console.log( data );
+                console.log("YAAAAAAA");
+            }
+        } );
+
 
 
 

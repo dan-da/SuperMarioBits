@@ -6,15 +6,15 @@ $app = new \Slim\Slim();
 
 //Routes
 // /index.php/tip
-$app->get('/tip',function() use ($app){
+$app->get('/tip/:coins',function( $coins ) use ($app){
+		
 		
 	$response = $app->response();
-	$response['Content-Type'] = 'application/json';
-	$response['X-Powered-By'] = 'Potato Energy';
+	$response['Content-Type'] = 'application/json';	
 	$response->status(200);
-	// etc.
 	
-	$response->body(json_encode(ChangeTip::tipUser()));
+	
+	$response->body( json_encode( ChangeTip::tipUser( $coins ) ) );
 } );
 
 //Run application

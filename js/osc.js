@@ -10,8 +10,8 @@ function OSC_Object(){
 
 	var service	= {
 		
-		tip: function( callback ){
-			$.get(  api + 'tip', function( data ) {
+		tip: function( mario_coins, callback ){
+			$.get(  api + 'tip/' + mario_coins, function( data ) {
 				callback( data );
 			});
 		}
@@ -19,17 +19,18 @@ function OSC_Object(){
     
     var payUserBits = function( mario_coins, callback ){
 
-    	service.tip( function( data ){
+    	service.tip( mario_coins, function( data ){
     		
     		//data 	= JSON.parse( data );
     		
     		var err = null;
     		
-    		if (data.status !== 200 ){
+    		// 200, 201... things like that are fine status codes
+    		if (data.status >= 300 ){
     			err = data.detail || data.err_msg;
     		}
     		
-    		callback( err );    		
+    		callback( err, data );    		
     	});
 
 
