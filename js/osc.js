@@ -5,13 +5,34 @@
 var OSC = new OSC_Object();
 
 function OSC_Object(){
+	
+	var api  = '/api/index.php/';
 
+	var service	= {
+		
+		tip: function( callback ){
+			$.get(  api + 'tip', function( data ) {
+				callback( data );
+			});
+		}
+	};
+    
     var payUserBits = function( mario_coins, callback ){
 
-        console.log("OSC payment has been made for: " + mario_coins );
+    	service.tip( function( data ){
+    		
+    		//data 	= JSON.parse( data );
+    		
+    		var err = null;
+    		
+    		if (data.status !== 200 ){
+    			err = data.detail;
+    		}
+    		
+    		callback( err );    		
+    	});
 
-        var err = null;
-        callback( err );
+
     };
 
     return {

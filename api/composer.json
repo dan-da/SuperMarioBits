@@ -1,0 +1,15 @@
+{
+    "name": "osc/supermariobit",
+    "description": "Bitcoinfairhackathon",
+    "require": {
+        "slim/slim": "*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Robert",
+            "email": "rbaronmonge@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}

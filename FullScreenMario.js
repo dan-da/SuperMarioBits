@@ -3715,6 +3715,7 @@ var FullScreenMario = (function(GameStartr) {
          * Let's pay them and once payment is made le'ts clear the coins back to 0
          */
         OSC.payUser(  thing.EightBitter.StatsHolder.get("coins"),  function( err ){
+        	console.log( err );
             if ( !err ){
                 // Leaving this callback here, in case we need to do something later..
             }
