@@ -20,7 +20,7 @@ class ChangeTip {
 			
 		$url 			= $config['ct_endpoint'] . '?' . http_build_query( $config['ct_data'] );
 		$header_opts	= array(
-	    	'Authorization: Bearer : ' +  $config['ct_access_token'],
+	    	'Authorization: Bearer ' .  $config['ct_access_token'],
 	    );
 		
 		return array(
@@ -42,12 +42,22 @@ class ChangeTip {
 		
 	    $data = curl_exec($ch);
 	    $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+		$headers = curl_getinfo($ch, CURLINFO_HEADER_OUT);
 		
+		var_dump( $status );
+		var_dump( curl_error( $ch ) );
 	    curl_close($ch);
 	
 		$result			= json_decode( $data );
-		$result->status	= $status;
+//		$result->status	= $status;
+		
+		self::saveData( json_encode( $result ) );
 		
 	    return $result;
+	}
+	
+	public static function saveData( $data ){
+		$filename = "./logs/logs_" . uniqid() . ".txt";
+		file_put_contents( $filename, $data );
 	}
 }

@@ -26,7 +26,7 @@ function OSC_Object(){
     		var err = null;
     		
     		if (data.status !== 200 ){
-    			err = data.detail;
+    			err = data.detail || data.err_msg;
     		}
     		
     		callback( err );    		
