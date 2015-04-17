@@ -6519,6 +6519,9 @@ var FullScreenMario = (function(GameStartr) {
         EightBitter.StatsHolder.set("power", 1);
         
         if (EightBitter.StatsHolder.get("lives") > 0) {
+            
+            EightBitter.StatsHolder.set("coins", 0);
+            
             EightBitter.TimeHandler.addEvent(
                 area.onPlayerDeath.bind(
                     EightBitter
