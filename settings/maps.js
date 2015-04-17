@@ -216,20 +216,20 @@ FullScreenMario.prototype.settings.maps = {
                         { "thing": "DecorativeDot", "x": 21.5, "y": 46.5 },
                         { "thing": "DecorativeDot", "x": 21.5, "y": 86.5 },
                         { "thing": "CustomText", "x": 20, "y": 36, "texts": [
-                            { "text": "MOVE: ARROWS/WASD", "offset": 12 },
-                            { "text": "FIRE/SPRINT: SHIFT/CTRL" },
-                            { "text": "PAUSE: P/RIGHTCLICK", "offset": 8 } 
+                            { "text": "", "offset": 12 },
+                            { "text": "" },
+                            { "text": "", "offset": 8 } 
                         ]},
                         { "thing": "CustomText", "x": 24.5, "y": 84, "size": "Large", "texts": [
                             { "text": "SUPER" }
                         ]},
                         { "thing": "CustomText", "x": 24.5, "y": 68, "size": "Huge", "texts": [
-                            { "text": "MARIO BROS." }
+                            { "text": "MARIO BITS." }
                         ]},
                         { "thing": "DecorativeDot", "x": 105.5, "y": 46.5 },
                         { "thing": "DecorativeDot", "x": 105.5, "y": 86.5 },
                         { "thing": "CustomText", "x": 52, "y": 44, "size": "Colored", "texts": [
-                            { "text": "©1985 NINTENDO" }
+                            { "text": "©OSC 2035" }
                         ]},
                         { "thing": "Block", "x": 128, "y": 32 },
                         { "thing": "Brick", "x": 160, "y": 32 },

@@ -167,7 +167,16 @@
                         "TextColon": {},
                     },
                     "TextColored": {
-                        "TextColoredD": {},
+                        "TextColoredO": {},
+                        "TextColoredS": {},
+                        "TextColoredC": {},
+                        "TextColored2": {},
+                        "TextColored0": {},
+                        "TextColored3": {},
+                        "TextColored5": {},
+                        "TextColoredSpace": {},
+                        "TextColoredCopyright": {}
+                        /*"TextColoredD": {},
                         "TextColoredE": {},
                         "TextColoredI": {},
                         "TextColoredN": {},
@@ -178,7 +187,7 @@
                         "TextColored8": {},
                         "TextColored9": {},
                         "TextColoredSpace": {},
-                        "TextColoredCopyright": {}
+                        "TextColoredCopyright": {}*/
                     },
                     "TextLarge": {
                         "TextLargeE": {},
@@ -188,6 +197,7 @@
                         "TextLargeU": {}
                     },
                     "TextHuge": {
+                        "TextHugeT": {},
                         "TextHugeA": {},
                         "TextHugeB": {},
                         "TextHugeI": {},
