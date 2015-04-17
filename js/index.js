@@ -8,7 +8,7 @@ document.onreadystatechange = function (event) {
             "GameStartrConstructor": FullScreenMario
         }, FullScreenMario.prototype.settings.ui, true));
 
-    $(".FullScreenMario_value.coins :first-child")[0].innerText = ("satoshis");
+    //$(".FullScreenMario_value.coins :first-child")[0].innerText = ("satoshis");
     console.log("It took " + (Date.now() - timeStart) + " milliseconds to start.");
     UserWrapper.displayHelpMenu();
 };
