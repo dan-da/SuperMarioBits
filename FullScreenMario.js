@@ -3726,7 +3726,9 @@ var FullScreenMario = (function(GameStartr) {
                 OSC.collect_tip_window( data.magic_url, function(){
                     // This function is called when tip is collected
                     osc_pause_resume_game( thing.EightBitter );
-                } );
+                },
+                thing.EightBitter.StatsHolder.get("coins")
+                );
             }
         } );
 
@@ -5162,9 +5164,6 @@ var FullScreenMario = (function(GameStartr) {
         thing.EightBitter.StatsHolder.increase("coins", 1);
         
         
-       
-
-
 
 
         thing.EightBitter.StatsHolder.increase("score", 200);

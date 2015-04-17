@@ -40,13 +40,14 @@ function OSC_Object() {
      * The idea is to show a big coin where the user can grab his money
      * @param {Object} tip_url
      */
-    var collect_tip_window = function(tip_url, callback) {
+    var collect_tip_window = function(tip_url, callback, num_coins) {
         //Let's set the url
         $('#magic_url').attr("href", tip_url );
         $('#magic_url').on("click", function(){
             $('#myModal').modal('toggle');
         });
         
+        $('#earned_cents').text(num_coins);
         $('#myModal').modal('show');
         
         $('#myModal').on('hidden.bs.modal', function () {
