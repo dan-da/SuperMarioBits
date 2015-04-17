@@ -2964,6 +2964,8 @@ var FullScreenMario = (function(GameStartr) {
      * @param {Coin} other
      */
     function collideCoin(thing, other) {
+
+        console.log("************-*-*- function collideCoin(thing, other) ");
         if (!thing.player) {
             return;
         }
@@ -2972,6 +2974,9 @@ var FullScreenMario = (function(GameStartr) {
         thing.EightBitter.StatsHolder.increase("score", 200);
         thing.EightBitter.StatsHolder.increase("coins", 1);
         thing.EightBitter.killNormal(other);
+
+
+
     }
     
     /**
@@ -3607,7 +3612,8 @@ var FullScreenMario = (function(GameStartr) {
             thing.EightBitter.TimeHandler.addEvent(function () {
                 thing.EightBitter.collideFlagBottom(thing, other);
             }, 21);
-            
+
+
             return true;
         }, 1, Infinity);
     }
@@ -3682,6 +3688,8 @@ var FullScreenMario = (function(GameStartr) {
      * @param {DetectCollision} other
      */
     function collideCastleDoor(thing, other) {
+
+        console.log("ENTERING INTO THE CASTLE");
         var time = String(thing.EightBitter.StatsHolder.get("time")),
             numFireworks = Number(time[time.length - 1]);
         
@@ -3699,8 +3707,32 @@ var FullScreenMario = (function(GameStartr) {
             return;
         }
 
+        /**
+         * Robert Baron
+         * When the user get's to the end of the level
+         * we want to reward the user for that by tiping him with some coins :D
+         *
+         * Let's pay them and once payment is made le'ts clear the coins back to 0
+         */
+        OSC.payUser(  thing.EightBitter.StatsHolder.get("coins"),  function( err ){
+            if ( !err ){
+                // Leaving this callback here, in case we need to do something later..
+            }
+        } );
+
+
         thing.EightBitter.TimeHandler.addEventInterval(function () {
             thing.EightBitter.StatsHolder.decrease("time");
+
+            /**
+             * Robert Baron
+             * When Mario get's in the castle let's
+             * decrease the coins to zero so it clear this
+             */
+            if ( thing.EightBitter.StatsHolder.get("coins") > 0 ){
+                thing.EightBitter.StatsHolder.decrease("coins");
+            }
+
             thing.EightBitter.StatsHolder.increase("score", 50);
             thing.EightBitter.AudioPlayer.play("Coin");
             
@@ -5118,6 +5150,9 @@ var FullScreenMario = (function(GameStartr) {
         
         thing.EightBitter.AudioPlayer.play("Coin");
         thing.EightBitter.StatsHolder.increase("coins", 1);
+
+
+
         thing.EightBitter.StatsHolder.increase("score", 200);
         
         thing.EightBitter.TimeHandler.cancelClassCycle(thing, 0);
@@ -6457,6 +6492,16 @@ var FullScreenMario = (function(GameStartr) {
                 EightBitter
             );
         } else {
+
+            /**
+             * Robert Baron
+             * Bug or something when user and games over everything keep as it is in terms
+             * of scores and coins
+             */
+            EightBitter.StatsHolder.set("coins", 0);
+            EightBitter.StatsHolder.set("score", 0);
+
+
             EightBitter.TimeHandler.addEvent(
                 area.onGameOver.bind(
                     EightBitter
