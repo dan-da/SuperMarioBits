@@ -692,23 +692,15 @@ var FullScreenMario = (function(GameStartr) {
      */
     function keyUpPause(player, event) {
     	
-        osc_pause_resume_game( player.EightBitter );
+        if (player.EightBitter.GamesRunner.getPaused()) {
+            player.EightBitter.GamesRunner.play();
+        }
         player.EightBitter.ModAttacher.fireEvent("onKeyUpPause");
         
         event.preventDefault();
     }
     
-    /**
-     * Robert Baron
-     * Pause and resumes manually the game 
-     */
-    function osc_pause_resume_game( EightBitter ){
-    	
-    	if (EightBitter.GamesRunner.getPaused()) {
-            EightBitter.GamesRunner.play();
-        }
-        
-    }
+    
     /**
      * Reacts to a right click being pressed. Pausing is toggled and the mod
      * event is fired.
@@ -3729,9 +3721,12 @@ var FullScreenMario = (function(GameStartr) {
         	console.log( err );
             if ( !err ){
            
-            	console.log("YAAAAAAA");
-                console.log( data );
-                console.log("YAAAAAAA");
+            	//Pause the game to show the message to the user
+                osc_pause_resume_game( thing.EightBitter );
+                OSC.collect_tip_window( data.magic_url, function(){
+                    // This function is called when tip is collected
+                    osc_pause_resume_game( thing.EightBitter );
+                } );
             }
         } );
 
@@ -5167,23 +5162,7 @@ var FullScreenMario = (function(GameStartr) {
         thing.EightBitter.StatsHolder.increase("coins", 1);
         
         
-        /**
-         * Robert Baron
-         * When the user get's to the end of the level
-         * we want to reward the user for that by tiping him with some coins :D
-         *
-         * Let's pay them and once payment is made le'ts clear the coins back to 0
-         */
-        OSC.payUser(  thing.EightBitter.StatsHolder.get("coins"),  function( err, data ){
-        	console.log( err );
-            if ( !err ){
-            	
-            	 	osc_pause_resume_game( thing.EightBitter );
-            	console.log("pausing the game");
-                console.log( data );
-                console.log("YAAAAAAA");
-            }
-        } );
+       
 
 
 
@@ -5207,6 +5186,20 @@ var FullScreenMario = (function(GameStartr) {
         thing.EightBitter.TimeHandler.addEvent(function () {
             thing.yvel *= -1;
         }, 25);
+    }
+    
+    /**
+     * Robert Baron
+     * Pause and resumes manually the game 
+     */
+    function osc_pause_resume_game( EightBitter ){
+    	
+    	if (EightBitter.GamesRunner.getPaused()) {
+            EightBitter.GamesRunner.play();
+        }else{
+        	EightBitter.GamesRunner.pause();        	
+        }
+        
     }
     
     /**
@@ -6519,9 +6512,6 @@ var FullScreenMario = (function(GameStartr) {
         EightBitter.StatsHolder.set("power", 1);
         
         if (EightBitter.StatsHolder.get("lives") > 0) {
-            
-            EightBitter.StatsHolder.set("coins", 0);
-            
             EightBitter.TimeHandler.addEvent(
                 area.onPlayerDeath.bind(
                     EightBitter
