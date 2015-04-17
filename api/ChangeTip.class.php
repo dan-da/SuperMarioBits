@@ -88,8 +88,11 @@ class ChangeTip {
     }
     
     public static function saveData( $data ){
-        mkdir( '/tmp/logs' );
-        $filename = "/tmp/logs/logs_" . uniqid() . ".txt";
+        $logdir = '/tmp/logs';
+        if( !file_exists($logdir) ) {
+            mkdir( $logdir );
+        }
+        $filename = "/$logdir/logs_" . uniqid() . ".txt";
         file_put_contents( $filename, $data );
     }
     
@@ -99,8 +102,31 @@ class ChangeTip {
     }
     
     public static function getMessage( $mario_coins ){
-        // return "&message=A%20little%20gift%20for%20participating"; 
-        return  "&message=For%20beating%20Mark%20Kerperles%20level" ;
+        $coins = $mario_coins == 1 ? 'coin' : 'coins';
+
+        $congrats = array( 'Well done!',
+                           'Atta boy!',
+                           'Good for you!',
+                           'Good on ya!',
+                           'Heck ya!',
+                           'Damn skippy!',
+                           'Hee Hawwwwww!',
+                           'Yippeeee!',
+                           'Congrats!',
+                           'Impressive!',
+                           'Chicks dig that!',
+                           'Incredible!',
+                           'Happy Day!',
+                           'Mind. Blown!',
+                           'Keep it up!',
+                           'To the Moon!',
+                           'Oh yeaaah!',
+                         );
+        $idx = rand( 0, count($congrats)-1 );
+        $congrats_msg = $congrats[$idx];
+
+        $message = "You collected $mario_coins mario $coins and completed the level. $congrats_msg";
+        return  "&message=" . urlencode( $message );
     }
     
     public static function getPostParameters( $mario_coins ){
