@@ -368,6 +368,8 @@
             "Goomba": {
                 "scoreFire": 100,
                 "scoreStar": 100,
+                "width": 16,
+                "height": 16,
                 "spawnType": "DeadGoomba",
                 "toly": FullScreenMario.unitsize,
                 "death": FullScreenMario.prototype.killGoomba,
@@ -744,6 +746,7 @@
             },
             "DeadGoomba": {
                 "height": 4,
+                "width": 16,
                 "nocollide": true,
                 "onThingAdded": FullScreenMario.prototype.spawnDeadGoomba
             },
