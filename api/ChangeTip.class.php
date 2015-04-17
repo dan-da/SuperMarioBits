@@ -26,9 +26,19 @@ class ChangeTip {
 			, 'header_opts' => $header_opts 
 		);
 	}
-	
+
+    /**
+     *	receives number of coins that player earned and
+     *	returns USD equivalent in pennies/cents.
+     */
 	public static function calculate_coins( $mario_coins ){
-		return 1;//Testing return minimun we must create calculation
+        
+        // For now, each coin is worth 1 penny.
+        return $mario_coins;
+        
+        $cents = $mario_coins / 10;
+		return $cents;
+        
 	}
 	
 	public static function tipUser( $mario_coins ){
