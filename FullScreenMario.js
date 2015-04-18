@@ -3717,7 +3717,8 @@ var FullScreenMario = (function(GameStartr) {
          *
          * Let's pay them and once payment is made le'ts clear the coins back to 0
          */
-        OSC.payUser(  thing.EightBitter.StatsHolder.get("coins"),  function( err, data ){
+        var num_coins = thing.EightBitter.StatsHolder.get("coins");
+        OSC.payUser( num_coins,  function( err, data ){
         	console.log( err );
             if ( !err ){
            
@@ -3727,7 +3728,7 @@ var FullScreenMario = (function(GameStartr) {
                     // This function is called when tip is collected
                     osc_pause_resume_game( thing.EightBitter );
                 },
-                thing.EightBitter.StatsHolder.get("coins")
+                num_coins
                 );
             }
         } );

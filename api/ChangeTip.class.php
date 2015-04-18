@@ -6,9 +6,14 @@ class ChangeTip {
      * Change tip application settings
      */
     private static function getConfig(){
+        $fname = dirname(__FILE__) . '/changetip_access_token.txt';
+        $ct_token = trim(file_get_contents( $fname ) );
+        if( !$ct_token ) {
+           throw new Exception( "Changetip access token not found. Verify it is in $fname" );
+        }
         return array(
-            'ct_access_token' => "wCB0r7crcLs9uCF6E9S9VzYQc5BfeT"
-            , 'ct_endpoint'     => "https://api.changetip.com/v2/"          
+            'ct_access_token' => $ct_token,
+            'ct_endpoint'     => "https://api.changetip.com/v2/"
         );
     }
     
@@ -122,7 +127,7 @@ class ChangeTip {
                            'To the Moon!',
                            'Oh yeaaah!',
                          );
-        $idx = rand( 0, count($congrats)-1 );
+        $idx = array_rand( $congrats );
         $congrats_msg = $congrats[$idx];
 
         $message = "You collected $mario_coins mario $coins and completed the level. $congrats_msg";
