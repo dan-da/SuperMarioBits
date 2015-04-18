@@ -1,37 +1,29 @@
-## FullScreenMario
+## Super mario bits
 
-#### A free HTML5 remake of Nintendo's original Super Mario Bros, expanded for the modern web. It includes the original 32 levels, a random map generator, a level editor, and over a dozen custom mods.
+#### Intro
+
+This is our entry for Bithack 2015. What we've done is added bitcoin goodness to SuperMario so the coins have real value!
+
+Receive Bitcoin for coins collected after each level. Each coin is worth a Penny.
+
+Payouts are made via ChangeTip. No account or bitcoin address needed before playing!
+
+We also modified some of the images for extra bitcoin fun.
+
+This game is derived from "FULL SCREEN MARIO" by JOSHUA K. GOLDBERG.
+
+## Game on
+
+http://mario.osc.co.cr
 
 
-## How to Play
+## TEAM OSC
 
-Although you may no longer play on [fullscreenmario.com](http://www.fullscreenmario.com), it is easy to play your own copy.
+Open Source Consulting, S.A. is a software development consulting company in San Jose, Costa Rica, operating since 2006. OSC was founded by Netscape Communications veteran Dan Libby, primary author of the RSS syndication format that is used across the internet by bloggers, podcasters, and media outlets. We believe in the power of Open Source to provide solutions that are simultaneously cost-effective, useful, and empowering.
 
-#### Newcomers (non-coders)
+We understand that Bitcoin’s blockchain technology is revolutionary and we intend to take part. We are interested in working with companies building innovative products in the bitcoin industry. We feel that we can add technical value to your project as well as an international perspective.
 
-[Download the .zip](https://github.com/Diogenesthecynic/FullScreenMario-JSON/archive/master.zip) of this project, extract that onto your computer, and open **index.html** in a browser (preferably Google Chrome). That's it!
-
-#### In your own site
-
-Upload the latest release of FullScreenMario (or your built version) to your FTP server. 
-
-
-
-## Developing
-
-#### Build Process
-
-FullScreenMario uses [Grunt](http://gruntjs.com/) to automate building, which requires [Node.js](http://node.js.org). The process is straightforward; see [Grunt's help page](http://gruntjs.com/getting-started).
-
-The root index.html file includes all the raw .js and .css files, and thus should only be used for development. The dist/index.html file uses the built and minified output so it should be used as production code.
-
-#### Coding
-
-FullScreenMario is built on a modular framework called GameStartr. The [GameStartr](GameStartr/) directory contains GameStartr, its parent class EightBittr, and the 22 modules used by the GameStartr framework. These all (theoretically) have their own README files, which you should skim before developing for FullScreenMario itself.
-
-The main game code outside the framework is stored in FullScreenMario.js. The FullScreenMario class inherits from GameStartr and has a global 'FSM' instance set up by the UserWrappr module in index.js. GameStartr's constructor (its reset function) contains a reset function for each module that stores the modules within it as `FSM.AudioPlayer`, `FSM.ChangeLiner`, etc. 
-
-The FullScreenMario.js class declaration contains class functions and some constants, while static settings to be added to the FullScreenMario prototype, such as map layouts and object attributes, are stored in files under [settings](settings), such as audio.js and collisions.js.
+You can contact us at business@osc.co.cr. Let's talk!
 
 
 ## Legal
