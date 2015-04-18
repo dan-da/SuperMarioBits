@@ -59,11 +59,16 @@ function OSC_Object() {
         
         
     };
+    
+    var closeModal= function(){
+        $('#myModal').modal('hide');
+    }
 
     return {
 
-        payUser : payUserBits,
-        collect_tip_window : collect_tip_window
+        payUser : payUserBits
+        , collect_tip_window : collect_tip_window
+        , closeModal: closeModal
 
     };
 

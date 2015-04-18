@@ -900,7 +900,7 @@
             "CastleRailingFilled": [8, 4],
             "CastleTop": [12, 12],
             "CastleWall": [8, 48],
-            "Mike": [16, 12],
+            "Mike": [8,8],
             "Cloud1": [16, 12],
             "Cloud2": [24, 12],
             "Cloud3": [32, 12],
