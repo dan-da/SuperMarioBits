@@ -228,8 +228,8 @@ FullScreenMario.prototype.settings.maps = {
                         ]},
                         { "thing": "DecorativeDot", "x": 105.5, "y": 46.5 },
                         { "thing": "DecorativeDot", "x": 105.5, "y": 86.5 },
-                        { "thing": "CustomText", "x": 52, "y": 44, "size": "Colored", "texts": [
-                            { "text": "©OSC 2035" }
+                        { "thing": "CustomText", "x": 30, "y": 44, "size": "Colored", "texts": [
+                            { "text": "OSC HACKATHON 2035" }
                         ]},
                         { "thing": "Block", "x": 128, "y": 32 },
                         { "thing": "Brick", "x": 160, "y": 32 },

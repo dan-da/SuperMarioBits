@@ -167,15 +167,6 @@
                         "TextColon": {},
                     },
                     "TextColored": {
-                        "TextColoredO": {},
-                        "TextColoredS": {},
-                        "TextColoredC": {},
-                        "TextColored2": {},
-                        "TextColored0": {},
-                        "TextColored3": {},
-                        "TextColored5": {},
-                        "TextColoredSpace": {},
-                        "TextColoredCopyright": {}
                         /*"TextColoredD": {},
                         "TextColoredE": {},
                         "TextColoredI": {},
@@ -185,9 +176,23 @@
                         "TextColored1": {},
                         "TextColored5": {},
                         "TextColored8": {},
-                        "TextColored9": {},
+                        "TextColored9": {},*/
+                         "TextColoredH": {},
+                         "TextColoredA": {},
+                         "TextColoredK": {},
+                         "TextColoredT": {},
+                         "TextColoredN": {},
+                       
+                       
+                        "TextColoredO": {},
+                        "TextColoredS": {},
+                        "TextColoredC": {},
+                        "TextColored2": {},
+                        "TextColored0": {},
+                        "TextColored3": {},
+                        "TextColored5": {},
                         "TextColoredSpace": {},
-                        "TextColoredCopyright": {}*/
+                        "TextColoredCopyright": {}
                     },
                     "TextLarge": {
                         "TextLargeE": {},
@@ -613,11 +618,11 @@
                 "collidePrimary": true,
                 "grounded": true,
                 "animate": FullScreenMario.prototype.animateFireballEmerge,
-                "collide": FullScreenMario.prototype.collideFireball,
-                "death": FullScreenMario.prototype.animateFireballExplode,
+                "collide": FullScreenMario.prototype.collideFireball
+                /*"death": FullScreenMario.prototype.animateFireballExplode,
                 "spriteCycleSynched": [
                     ["one", "two", "three", "four"], "spinning", 4
-                ]
+                ]*/
             },
             "CastleFireball": {
                 "deadly": true,
