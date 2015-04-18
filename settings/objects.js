@@ -177,12 +177,13 @@
                         "TextColored5": {},
                         "TextColored8": {},
                         "TextColored9": {},*/
-                         "TextColoredH": {},
-                         "TextColoredA": {},
-                         "TextColoredK": {},
-                         "TextColoredT": {},
-                         "TextColoredN": {},
-                       
+                        "TextColoredH": {},
+                        "TextColoredA": {},
+                        "TextColoredK": {},
+                        "TextColoredT": {},
+                        "TextColoredN": {},
+                        "TextColoredW": {},
+                        "TextColoredB": {},
                        
                         "TextColoredO": {},
                         "TextColoredS": {},
