@@ -3720,15 +3720,18 @@ var FullScreenMario = (function(GameStartr) {
          */
         var num_coins = thing.EightBitter.StatsHolder.get("coins");
         if ( num_coins > 0 ){
+            
+            //Pause the game to show the message to the user
+            osc_pause_resume_game( thing.EightBitter );
+            
             OSC.payUser( num_coins,  function( err, data ){
 
                 if ( !err ){
                
-                	//Pause the game to show the message to the user
-                    osc_pause_resume_game( thing.EightBitter );
                     OSC.collect_tip_window( data.magic_url, function(){
                         // This function is called when tip is collected
-                        osc_pause_resume_game( thing.EightBitter );
+                        // osc_pause_resume_game( thing.EightBitter );
+                        return 1;
                     },
                     num_coins
                     );
