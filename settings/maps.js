@@ -104,7 +104,12 @@ FullScreenMario.prototype.settings.maps = {
             ["HillSmall", 128, 0],
             ["Cloud1", 156, 76],
             ["Bush1", 188, 0],
+            
+            ["Mike", 220, 76],
             ["Cloud3", 220, 68],
+            
+            
+            
             ["Cloud2", 292, 76],
             ["Bush2", 332, 0],
             ["Blank", 384]

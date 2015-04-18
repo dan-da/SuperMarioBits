@@ -97,9 +97,11 @@
                     "CastleTop": {},
                     "CastleWall": {},
                     "Cloud": {
+                        "Mike": {},
                         "Cloud1": {},
                         "Cloud2": {},
                         "Cloud3": {},
+                        
                     },
                     "Fence": {},
                     "Flag": {},
@@ -894,6 +896,7 @@
             "CastleRailingFilled": [8, 4],
             "CastleTop": [12, 12],
             "CastleWall": [8, 48],
+            "Mike": [16, 12],
             "Cloud1": [16, 12],
             "Cloud2": [24, 12],
             "Cloud3": [32, 12],
