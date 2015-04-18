@@ -1,3 +1,105 @@
-.center-text{
-	text-align:center;
+@import url(http://fonts.googleapis.com/css?family=Oswald:400|Open+Sans:700);
+html, body {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  background: #ece5da;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-y: auto;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+section.header {
+  width: 100%;
+  text-align: center;
+  margin-top: 6rem;
+}
+section.header h1, section.header h3 {
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+section.header h1 {
+  font-family: "Oswald", Sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 70px;
+  text-shadow: 4px 5px #e6e6d8, 6px 7px #c6a39a;
+  margin-top: 0;
+}
+section.header h1 span {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 0;
+  padding-top: 0;
+}
+section.header span.star {
+  font-size: 20px;
+}
+section.header h3 {
+  font-family: "Open Sans", Sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  margin-bottom: -10px;
+  position: relative;
+}
+section.header h3:before, section.header h3:after {
+  content: " ";
+  position: absolute;
+  width: 100px;
+  height: 4px;
+  border-top: 2px solid #121212;
+  border-bottom: 2px solid #121212;
+}
+section.header h3:before {
+  margin: 5px 0 0 -110px;
+}
+section.header h3:after {
+  margin: 5px 0 0 10px;
+}
+
+.realistic {
+  color: #222;
+  font-family: Georgia, Baskerville, serif;
+  font-size: 30px;
+  transform-origin: 50% 600px;
+  transform: scale(0.75, 0.75) perspective(1080px) rotateY(0deg) rotateX(12deg);
+  text-shadow: 0 0 3px rgba(34, 34, 34, 0.6), 0 0 1px rgba(34, 34, 34, 0.2);
+  text-align: justify;
+}
+
+p {
+  text-indent: 60px;
+}
+
+#explanation {
+  color: #222;
+  font-family: Georgia, Baskerville, serif;
+  font-size: 30px;
+  transform-origin: 50% 600px;
+  transform: scale(0.75, 0.75) perspective(1080px) rotateY(0deg) rotateX(12deg);
+  text-shadow: 0 0 3px rgba(34, 34, 34, 0.6), 0 0 1px rgba(34, 34, 34, 0.2);
+  text-align: justify;
+  top: -180px;
+  position: relative;
+}
+#explanation img {
+  margin: 3rem auto;
+  display: block;
+}
+
+#controls {
+  text-align: center;
+}
+
+.modal-body a {display: block; text-align: center; }
+.modal-body img {
+border-radius: 50%;
+box-shadow: 6px 6px 33px rgba(0,0,0,0.6);
 }
