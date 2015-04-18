@@ -607,6 +607,8 @@
                 "action": FullScreenMario.prototype.killPlayer
             },
             "FireFlower": {
+                "width": 8,
+                "height": 8,
                 "action": FullScreenMario.prototype.playerShroom,
                 "spriteCycle": [
                     ["one", "two", "three", "four"]
@@ -641,16 +643,17 @@
             },
             "Star": {
                 "name": "star item", // Item class so player's star isn't confused with this
-                "width": 7,
+                "width": 8,
+                "height": 8,
                 "grounded": true,
                 "speed": FullScreenMario.unitsize * .56,
                 "action": FullScreenMario.prototype.collideStar,
                 "movement": FullScreenMario.prototype.moveJumping,
                 "jumpheight": FullScreenMario.unitsize * 1.17,
                 "gravity": FullScreenMario.gravity / 2.8,
-                "spriteCycle": [
+                /*"spriteCycle": [
                     ["one", "two", "three", "four"], 0, 7
-                ]
+                ]*/
             },
             "Shell": {
                 "height": 7,
