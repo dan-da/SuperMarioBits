@@ -76,12 +76,115 @@ section.header h3:after {
 }
 
 
+
+.modal-content {
+  border: 22px solid rgb(28, 93, 184);
+  border-radius: 18px;
+  background: #becccc;
+}
+.modal-body {
+  text-align: center;
+}
+.modal-body p {
+    font-size: 2rem;
+  color: rgb(4, 21, 37);
+  padding: 0 3rem;
+}
 .modal-body a {
 	display: block;
 	text-align: center;
+	margin-bottom: 3rem;
+	position: relative;
 }
 .modal-body img {
 	border-radius: 50%;
 	margin: 1rem auto;
 	box-shadow: 3px 3px 9px rgba(0,0,0,0.6);
+}
+
+.modal-content .shadow {
+	font: 600 42px/1 'Source Sans Pro', Arial, sans-serif;
+	text-transform: uppercase;
+	color: #fff;
+	text-align: center;
+  text-shadow:     0 1px 0 hsl(174,5%,80%),
+	                 0 2px 0 hsl(174,5%,75%),
+	                 0 3px 0 hsl(174,5%,70%),
+	                 0 4px 0 hsl(174,5%,66%),
+	                 0 5px 0 hsl(174,5%,64%),
+	                 0 6px 0 hsl(174,5%,62%),
+	                 0 7px 0 hsl(174,5%,61%),
+	                 0 8px 0 hsl(174,5%,60%),
+
+	                 0 0 5px rgba(0,0,0,.05),
+	                0 1px 3px rgba(0,0,0,.2),
+	                0 3px 5px rgba(0,0,0,.2),
+	               0 5px 10px rgba(0,0,0,.2),
+	              0 10px 10px rgba(0,0,0,.2),
+	              0 20px 20px rgba(0,0,0,.3);
+}
+#earned_cents {
+  font-size: 3.69rem;
+  font-weight: 600;
+  color: orange;
+  text-shadow: 0 0 3px red;
+  vertical-align: middle;
+}
+
+
+/*  RIBBON */
+.ribbon {
+	width: 350px;
+	position: absolute;
+	left: 50%;
+	bottom: -99px;
+	z-index: -1;
+	transform: translateX(-50%);
+}
+.ribbon .arrow-left {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 0px solid transparent;
+  border-right: 30px solid transparent;
+  border-top: 30px solid #e74c3c;
+  margin-top: 124px;
+}
+.ribbon .arrow-right {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 0px solid transparent;
+  border-top: 30px solid #e74c3c;
+  margin-top: 124px;
+  margin-left: 30px;
+}
+.ribbon .left {
+  position: relative;
+  z-index: 1;
+  height: 125px;
+  width: 60px;
+  margin-left: 110px;
+  margin-top: -40px;
+  background: #e74c3c;
+  transform: rotate(15deg);
+  -ms-transform: rotate(15deg);
+  /* IE 9 */
+  -webkit-transform: rotate(15deg);
+  /* Safari and Chrome */
+}
+.ribbon .right {
+  position: relative;
+  z-index: 0;
+  height: 125px;
+  width: 60px;
+  margin-left: 180px;
+  margin-top: -110px;
+  background: #e74c3c;
+  transform: rotate(-15deg);
+  -ms-transform: rotate(-15deg);
+  /* IE 9 */
+  -webkit-transform: rotate(-15deg);
+  /* Safari and Chrome */
 }
