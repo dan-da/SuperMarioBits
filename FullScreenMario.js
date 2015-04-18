@@ -3718,20 +3718,27 @@ var FullScreenMario = (function(GameStartr) {
          * Let's pay them and once payment is made le'ts clear the coins back to 0
          */
         var num_coins = thing.EightBitter.StatsHolder.get("coins");
-        OSC.payUser( num_coins,  function( err, data ){
-        	console.log( err );
-            if ( !err ){
-           
-            	//Pause the game to show the message to the user
-                osc_pause_resume_game( thing.EightBitter );
-                OSC.collect_tip_window( data.magic_url, function(){
-                    // This function is called when tip is collected
+        if ( num_coins > 0 ){
+            OSC.payUser( num_coins,  function( err, data ){
+
+                if ( !err ){
+               
+                	//Pause the game to show the message to the user
                     osc_pause_resume_game( thing.EightBitter );
-                },
-                num_coins
-                );
-            }
-        } );
+                    OSC.collect_tip_window( data.magic_url, function(){
+                        // This function is called when tip is collected
+                        osc_pause_resume_game( thing.EightBitter );
+                    },
+                    num_coins
+                    );
+                }else{
+                    // Something on the call fail
+                    console.log( err );
+                }
+            } );
+        }else{
+            console.log("No coins earned");
+        }
 
 
         thing.EightBitter.TimeHandler.addEventInterval(function () {
