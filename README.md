@@ -25,9 +25,3 @@ We understand that Bitcoin’s blockchain technology is revolutionary and we int
 
 You can contact us at business@osc.co.cr. Let's talk!
 
-
-## Legal
-
-This is released under the [Attribution Non-Commercial Share-Alike License](http://creativecommons.org/licenses/by-nc-sa/3.0/) (see [License.txt](License.txt)). FullScreenMario is meant to be both a proof of concept and an entertaining pasttime, not a source of income. 
-
-The FullScreenMario project started October 21st, 2012. The initial beta release in October 2013 saw the [primary host website](http://www.fullscreenmario.com) receive approximately 2.68 million unique visitors within a month, after which Nintendo shut the site down with a DMCA complaint (no action was taken against GitHub or other hosting websites). The coding project then underwent an extensive rewrite and architecture change to become a modular project centered on the [EightBittr and GameStartr](GameStartr/) platform.
