@@ -3548,7 +3548,8 @@ var FullScreenMario = (function(GameStartr) {
         // This is a cutscene. No movement, no deaths, no scrolling.
         thing.star = true;
         thing.nocollidechar = true;
-        thing.EightBitter.MapScreener.nokeys = true;
+        //robert baron
+        //thing.EightBitter.MapScreener.nokeys = true;
         thing.EightBitter.MapScreener.notime = true;
         thing.EightBitter.MapScreener.canscroll = false;
         
@@ -3692,7 +3693,7 @@ var FullScreenMario = (function(GameStartr) {
      */
     function collideCastleDoor(thing, other) {
 
-        console.log("ENTERING INTO THE CASTLE");
+        
         var time = String(thing.EightBitter.StatsHolder.get("time")),
             numFireworks = Number(time[time.length - 1]);
         
@@ -3724,10 +3725,10 @@ var FullScreenMario = (function(GameStartr) {
                 if ( !err ){
                
                 	//Pause the game to show the message to the user
-                    osc_pause_resume_game( thing.EightBitter );
+                    //osc_pause_resume_game( thing.EightBitter );
                     OSC.collect_tip_window( data.magic_url, function(){
                         // This function is called when tip is collected
-                        osc_pause_resume_game( thing.EightBitter );
+                       // osc_pause_resume_game( thing.EightBitter );
                     },
                     num_coins
                     );
@@ -3758,6 +3759,8 @@ var FullScreenMario = (function(GameStartr) {
             
             if (thing.EightBitter.StatsHolder.get("time") <= 0) {
                 thing.EightBitter.TimeHandler.addEvent(function () {
+                    
+                  
                     thing.EightBitter.animateEndLevelFireworks(thing, other, numFireworks);
                 }, 35);
                 return true;
@@ -5703,8 +5706,8 @@ var FullScreenMario = (function(GameStartr) {
             firework, position;
         
         thing.EightBitter.addThing(
-            flag,
-            doorLeft + thing.EightBitter.unitsize,
+            flag
+            ,doorLeft + thing.EightBitter.unitsize,
             doorTop - thing.EightBitter.unitsize * 24
         );
         thing.EightBitter.arrayToBeginning(
@@ -5719,8 +5722,8 @@ var FullScreenMario = (function(GameStartr) {
             thing.EightBitter.TimeHandler.addEventInterval(function () {
                 position = fireworkPositions[i];
                 firework = thing.EightBitter.addThing(
-                    "Firework",
-                    thing.left + position[0] * thing.EightBitter.unitsize,
+                    "Firework"
+                    ,thing.left + position[0] * thing.EightBitter.unitsize,
                     thing.top + position[1] * thing.EightBitter.unitsize
                 );
                 firework.animate(firework);
@@ -5731,10 +5734,17 @@ var FullScreenMario = (function(GameStartr) {
         thing.EightBitter.TimeHandler.addEvent(function () {
             thing.EightBitter.AudioPlayer.addEventImmediate(
                 "Stage Clear", "ended", function () {
+                    /**
+                     *  Robert Baron
+                     * This is for when the user does not make any action on the screen
+                     * Does not close the modal, or click to get his bitcoins.
+                     * So we close the modal when mario moves from that level
+                     */
+                    OSC.closeModal();
                     thing.EightBitter.collideLevelTransport(thing, other);
                 }
             );
-        }, i * fireInterval + 420);
+        }, 100 );//i * fireInterval + 420);
     }
     
     /**
