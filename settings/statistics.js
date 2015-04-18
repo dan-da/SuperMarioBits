@@ -10,8 +10,8 @@ FullScreenMario.prototype.settings.statistics = {
             "style": {
                 "position": "absolute",
                 "top": 0,
-                //"width": "960",
-                "color": "red",
+                "width": "100%",
+                "color": "white",
                 "fontSize": "21px",
                 "textTransform": "uppercase",
             }
