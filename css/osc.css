@@ -97,3 +97,9 @@ p {
 #controls {
   text-align: center;
 }
+
+.modal-body a {display: block; text-align: center; }
+.modal-body img {
+border-radius: 50%;
+box-shadow: 6px 6px 33px rgba(0,0,0,0.6);
+}
