@@ -54,7 +54,7 @@ class ChangeTip {
          * ------------------------------------------------------------------------------------------ 
          */
         // Uncomment this line to simulate a successful call to changetip.
-        // return array('id'=> 722105, 'magic_url' => 'http://tip.me/once/FprD-2hQHKAfF', 'status' => 201);
+         return array('id'=> 722105, 'magic_url' => 'http://tip.me/once/FprD-2hQHKAfF', 'status' => 201);
         
         //Get the number of cents()
         // Please refer to https://www.changetip.com/v2/monikers/
