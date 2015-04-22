@@ -35,7 +35,10 @@
 
 <section id="explanation" class="section-text">
 
-
+  <hr/>
+  <p><b>Sorry folks, our ChangeTip funds have run out.  You can still play the game, but there will be no more payouts.</b></p>
+  <hr/>
+  
   <p>This is our entry for Bithack 2015. What we've done is added bitcoin goodness to SuperMario so the coins have real value!</p>
 
   <p>Receive Bitcoin for coins collected after each level. Each coin is worth a Penny.</p>
@@ -74,12 +77,13 @@
 
       <div class="modal-body">
         <h1 class="shadow">Congratulations</h1>
-        <a href="#" id="magic_url" target="_blank">
+        <a href="#" id="magic_url" target="_blank" onclick="alert('Sorry, the funds have run out!'); return false">
           <img src="images/logo256.png">
         </a>
         <div class="certificate-text">
           <p>You've earned <span id="earned_cents">00</span> cents for completing this level, click above to claim your bitcoins</p>
         </div>
+        <p>Sorry folks, the funds have run out.  So the link above has been deactivated.  Hit escape, then 'P' to continue.</p>
       </div>
     </div>
     <div class="ribbon">
